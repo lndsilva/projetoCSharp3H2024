@@ -119,11 +119,13 @@ namespace ProjetoLojaABC
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(543, 495);
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.Location = new System.Drawing.Point(662, 495);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(215, 52);
+            this.btnVoltar.Size = new System.Drawing.Size(96, 52);
             this.btnVoltar.TabIndex = 6;
-            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // frmMenuPrincipal
