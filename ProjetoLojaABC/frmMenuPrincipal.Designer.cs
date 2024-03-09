@@ -141,6 +141,7 @@ namespace ProjetoLojaABC
             this.Controls.Add(this.btnFuncionarios);
             this.Controls.Add(this.btnClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
