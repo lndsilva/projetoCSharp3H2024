@@ -21,3 +21,5 @@ C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\Proje
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.csproj.CoreCompileInputs.cache
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.exe
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.pdb
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmSobre.resources
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmFuncionarios.resources

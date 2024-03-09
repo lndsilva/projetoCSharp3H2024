@@ -23,5 +23,12 @@ namespace ProjetoLojaABC
             abrir.Show();
             this.Hide();
         }
+
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        {
+            frmFuncionarios abrir = new frmFuncionarios();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
