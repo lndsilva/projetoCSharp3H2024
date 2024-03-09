@@ -47,7 +47,7 @@ namespace ProjetoLojaABC
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(211, 220);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Text = "&Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -59,8 +59,8 @@ namespace ProjetoLojaABC
             this.btnFuncionarios.Location = new System.Drawing.Point(24, 267);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(211, 220);
-            this.btnFuncionarios.TabIndex = 1;
-            this.btnFuncionarios.Text = "Funcionários";
+            this.btnFuncionarios.TabIndex = 3;
+            this.btnFuncionarios.Text = "&Funcionários";
             this.btnFuncionarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFuncionarios.UseVisualStyleBackColor = true;
@@ -72,8 +72,8 @@ namespace ProjetoLojaABC
             this.btnVendas.Location = new System.Drawing.Point(283, 267);
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(211, 220);
-            this.btnVendas.TabIndex = 3;
-            this.btnVendas.Text = "Vendas";
+            this.btnVendas.TabIndex = 4;
+            this.btnVendas.Text = "&Vendas";
             this.btnVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVendas.UseVisualStyleBackColor = true;
@@ -85,8 +85,8 @@ namespace ProjetoLojaABC
             this.btnProdutos.Location = new System.Drawing.Point(283, 28);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(211, 220);
-            this.btnProdutos.TabIndex = 2;
-            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.TabIndex = 1;
+            this.btnProdutos.Text = "Pro&dutos";
             this.btnProdutos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProdutos.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@ namespace ProjetoLojaABC
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(211, 220);
             this.btnUsuarios.TabIndex = 5;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "&Usuários";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -111,8 +111,8 @@ namespace ProjetoLojaABC
             this.btnFornecedores.Location = new System.Drawing.Point(543, 28);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(211, 220);
-            this.btnFornecedores.TabIndex = 4;
-            this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.TabIndex = 2;
+            this.btnFornecedores.Text = "Fo&rnecedores";
             this.btnFornecedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFornecedores.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@ namespace ProjetoLojaABC
             // btnVoltar
             // 
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
-            this.btnVoltar.Location = new System.Drawing.Point(662, 495);
+            this.btnVoltar.Location = new System.Drawing.Point(655, 495);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(96, 52);
             this.btnVoltar.TabIndex = 6;
