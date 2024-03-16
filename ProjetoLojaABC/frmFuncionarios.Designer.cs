@@ -69,7 +69,7 @@ namespace ProjetoLojaABC
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 42);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Voltar";
+            this.button1.Text = "Novo";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -78,7 +78,7 @@ namespace ProjetoLojaABC
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 42);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Voltar";
+            this.button2.Text = "Cadastrar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -87,7 +87,7 @@ namespace ProjetoLojaABC
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 42);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Voltar";
+            this.button3.Text = "Excluir";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -96,7 +96,7 @@ namespace ProjetoLojaABC
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 42);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Voltar";
+            this.button4.Text = "Pesquisar";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -105,7 +105,7 @@ namespace ProjetoLojaABC
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 42);
             this.button5.TabIndex = 5;
-            this.button5.Text = "Voltar";
+            this.button5.Text = "Limpar";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // frmFuncionarios
