@@ -69,7 +69,7 @@ namespace ProjetoLojaABC
             this.btnVoltar.Location = new System.Drawing.Point(656, 10);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(120, 42);
-            this.btnVoltar.TabIndex = 0;
+            this.btnVoltar.TabIndex = 18;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -85,14 +85,14 @@ namespace ProjetoLojaABC
             this.panel1.Location = new System.Drawing.Point(3, 486);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(779, 71);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 12;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(7, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 42);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Novo";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -101,7 +101,7 @@ namespace ProjetoLojaABC
             this.button2.Location = new System.Drawing.Point(136, 10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 42);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 14;
             this.button2.Text = "Cadastrar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -110,7 +110,7 @@ namespace ProjetoLojaABC
             this.button3.Location = new System.Drawing.Point(264, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 42);
-            this.button3.TabIndex = 3;
+            this.button3.TabIndex = 15;
             this.button3.Text = "Excluir";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +119,7 @@ namespace ProjetoLojaABC
             this.button4.Location = new System.Drawing.Point(393, 10);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 42);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 16;
             this.button4.Text = "Pesquisar";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@ namespace ProjetoLojaABC
             this.button5.Location = new System.Drawing.Point(517, 10);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 42);
-            this.button5.TabIndex = 5;
+            this.button5.TabIndex = 17;
             this.button5.Text = "Limpar";
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -159,8 +159,8 @@ namespace ProjetoLojaABC
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosPessoais.Location = new System.Drawing.Point(19, 26);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(747, 312);
-            this.gpbDadosPessoais.TabIndex = 2;
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(747, 289);
+            this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "Dados pessoais";
             // 
@@ -177,7 +177,7 @@ namespace ProjetoLojaABC
             // 
             this.textBox1.Location = new System.Drawing.Point(87, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
+            this.textBox1.Size = new System.Drawing.Size(81, 24);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
@@ -185,7 +185,7 @@ namespace ProjetoLojaABC
             this.textBox2.Location = new System.Drawing.Point(87, 81);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(324, 24);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
@@ -201,7 +201,7 @@ namespace ProjetoLojaABC
             this.textBox3.Location = new System.Drawing.Point(477, 81);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(249, 24);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
@@ -227,7 +227,7 @@ namespace ProjetoLojaABC
             this.maskedTextBox1.Mask = "999,999,999-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(112, 24);
-            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox1.TabIndex = 4;
             // 
             // maskedTextBox2
             // 
@@ -235,7 +235,7 @@ namespace ProjetoLojaABC
             this.maskedTextBox2.Mask = "99999-9999";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(87, 24);
-            this.maskedTextBox2.TabIndex = 9;
+            this.maskedTextBox2.TabIndex = 5;
             // 
             // label5
             // 
@@ -248,15 +248,15 @@ namespace ProjetoLojaABC
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(87, 167);
+            this.textBox4.Location = new System.Drawing.Point(87, 172);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(301, 24);
-            this.textBox4.TabIndex = 11;
+            this.textBox4.Size = new System.Drawing.Size(353, 24);
+            this.textBox4.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 170);
+            this.label6.Location = new System.Drawing.Point(11, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 18);
             this.label6.TabIndex = 10;
@@ -264,15 +264,15 @@ namespace ProjetoLojaABC
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(514, 167);
+            this.textBox5.Location = new System.Drawing.Point(514, 172);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(58, 24);
-            this.textBox5.TabIndex = 13;
+            this.textBox5.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(446, 170);
+            this.label7.Location = new System.Drawing.Point(446, 175);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 18);
             this.label7.TabIndex = 12;
@@ -280,16 +280,16 @@ namespace ProjetoLojaABC
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(639, 167);
+            this.maskedTextBox3.Location = new System.Drawing.Point(639, 172);
             this.maskedTextBox3.Mask = "99999-999";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(87, 24);
-            this.maskedTextBox3.TabIndex = 15;
+            this.maskedTextBox3.TabIndex = 8;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(593, 170);
+            this.label8.Location = new System.Drawing.Point(593, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 18);
             this.label8.TabIndex = 14;
@@ -297,15 +297,15 @@ namespace ProjetoLojaABC
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(87, 215);
+            this.textBox6.Location = new System.Drawing.Point(87, 223);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(201, 24);
-            this.textBox6.TabIndex = 17;
+            this.textBox6.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 218);
+            this.label9.Location = new System.Drawing.Point(35, 226);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 18);
             this.label9.TabIndex = 16;
@@ -313,15 +313,15 @@ namespace ProjetoLojaABC
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(362, 215);
+            this.textBox7.Location = new System.Drawing.Point(362, 223);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(167, 24);
-            this.textBox7.TabIndex = 19;
+            this.textBox7.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(300, 218);
+            this.label10.Location = new System.Drawing.Point(300, 226);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 18);
             this.label10.TabIndex = 18;
@@ -330,7 +330,7 @@ namespace ProjetoLojaABC
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(535, 218);
+            this.label11.Location = new System.Drawing.Point(535, 226);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 18);
             this.label11.TabIndex = 20;
@@ -339,10 +339,10 @@ namespace ProjetoLojaABC
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(605, 214);
+            this.comboBox1.Location = new System.Drawing.Point(605, 222);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 21;
+            this.comboBox1.TabIndex = 11;
             // 
             // frmFuncionarios
             // 
