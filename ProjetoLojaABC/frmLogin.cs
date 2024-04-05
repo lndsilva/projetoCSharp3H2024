@@ -7,11 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ProjetoLojaABC
 {
     public partial class frmLogin : Form
     {
+        //Criando variáveis para controle do menu
+        const int MF_BYCOMMAND = 0X400;
+        [DllImport("user32")]
+        static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
+        [DllImport("user32")]
+        static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+        [DllImport("user32")]
+        static extern int GetMenuItemCount(IntPtr hWnd);
+
+        //variável global
+        bool flag = true;
+
+
+        //método construtor
         public frmLogin()
         {
             InitializeComponent();
@@ -19,14 +34,53 @@ namespace ProjetoLojaABC
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            frmMenuPrincipal abrir = new frmMenuPrincipal();
-            abrir.Show();
-            this.Hide();
+            string usuario, senha;
+
+            usuario = txtUsuario.Text;
+            senha = txtSenha.Text;
+
+            if (usuario.Equals("etecia")&&senha.Equals("123456"))
+            {
+                frmMenuPrincipal abrir = new frmMenuPrincipal();
+                abrir.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha inválidos!!!",
+                    "Mensagem",MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+                limparCampos();
+            }
+            
+        }
+
+        //limpar campos
+        public void limparCampos()
+        {
+            txtUsuario.Text = "";
+            txtSenha.Clear();
+            txtUsuario.Focus();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            IntPtr hMenu = GetSystemMenu(this.Handle, false);
+            int MenuCount = GetMenuItemCount(hMenu) - 1;
+            RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
 
         }
     }
