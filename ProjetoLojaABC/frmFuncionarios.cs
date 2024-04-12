@@ -64,7 +64,7 @@ namespace ProjetoLojaABC
         }
         public void habilitarCampos()
         {
-            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = true;
             txtBairro.Enabled = true;
             txtCidade.Enabled = true;
             txtEmail.Enabled = true;
@@ -92,9 +92,12 @@ namespace ProjetoLojaABC
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            if (txtCodigo.Text.Equals("")&&txtNome.Text.Equals("")&&
-                txtEndereco.Text.Equals("")&&txtCidade.Text.Equals("")&&
-                txtBairro.Text.Equals("")&&txtNumero.Text.Equals("")&&)
+            if (txtCodigo.Text.Equals("") || txtNome.Text.Equals("") ||
+                txtEndereco.Text.Equals("") || txtCidade.Text.Equals("") ||
+                txtBairro.Text.Equals("") || txtNumero.Text.Equals("") ||
+                txtEmail.Text.Equals("") || mskCelular.Text.Equals("     -")
+                || mskCPF.Text.Equals("   .   .   -") ||
+                mskCEP.Text.Equals("     -") || cbbEstado.Text.Equals(""))
             {
                 MessageBox.Show("Favor inserir valores válidos!!!",
                 "Mensagem do sistema", MessageBoxButtons.OK,
@@ -102,13 +105,16 @@ namespace ProjetoLojaABC
                 MessageBoxDefaultButton.Button1);
 
             }
+            else
+            {
 
-            MessageBox.Show("Cadastrado com sucesso!!!",
-                "Mensagem do sistema", MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1);
-            desabilitarCampos();
-            btnNovo.Enabled = true;
+                MessageBox.Show("Cadastrado com sucesso!!!",
+                    "Mensagem do sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+                desabilitarCampos();
+                btnNovo.Enabled = true;
+            }
         }
     }
 }
