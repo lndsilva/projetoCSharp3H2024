@@ -25,6 +25,7 @@ namespace ProjetoLojaABC
         public frmFuncionarios()
         {
             InitializeComponent();
+            desabilitarCampos();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -44,7 +45,70 @@ namespace ProjetoLojaABC
         //desabilitarCampos
         public void desabilitarCampos()
         {
-           
+            txtCodigo.Enabled = false;
+            txtBairro.Enabled = false;
+            txtCidade.Enabled = false;
+            txtEmail.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtNome.Enabled = false;
+            txtNumero.Enabled = false;
+            mskCelular.Enabled = false;
+            mskCEP.Enabled = false;
+            mskCPF.Enabled = false;
+            cbbEstado.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnLimpar.Enabled = false;
+            btnCadastrar.Enabled = false;
+
+        }
+        public void habilitarCampos()
+        {
+            txtCodigo.Enabled = false;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtEmail.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtNome.Enabled = true;
+            txtNumero.Enabled = true;
+            mskCelular.Enabled = true;
+            mskCEP.Enabled = true;
+            mskCPF.Enabled = true;
+            cbbEstado.Enabled = true;
+
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnLimpar.Enabled = true;
+            btnCadastrar.Enabled = true;
+            btnNovo.Enabled = false;
+            txtNome.Focus();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+            if (txtCodigo.Text.Equals("")&&txtNome.Text.Equals("")&&
+                txtEndereco.Text.Equals("")&&txtCidade.Text.Equals("")&&
+                txtBairro.Text.Equals("")&&txtNumero.Text.Equals("")&&)
+            {
+                MessageBox.Show("Favor inserir valores válidos!!!",
+                "Mensagem do sistema", MessageBoxButtons.OK,
+                MessageBoxIcon.Error,
+                MessageBoxDefaultButton.Button1);
+
+            }
+
+            MessageBox.Show("Cadastrado com sucesso!!!",
+                "Mensagem do sistema", MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+            desabilitarCampos();
+            btnNovo.Enabled = true;
         }
     }
 }

@@ -60,22 +60,24 @@ namespace ProjetoLojaABC
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.pnlCRUD.SuspendLayout();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(656, 10);
+            this.btnVoltar.Location = new System.Drawing.Point(665, 15);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(120, 42);
-            this.btnVoltar.TabIndex = 18;
+            this.btnVoltar.Size = new System.Drawing.Size(100, 32);
+            this.btnVoltar.TabIndex = 19;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // pnlCRUD
             // 
+            this.pnlCRUD.Controls.Add(this.btnAlterar);
             this.pnlCRUD.Controls.Add(this.btnLimpar);
             this.pnlCRUD.Controls.Add(this.btnPesquisar);
             this.pnlCRUD.Controls.Add(this.btnExcluir);
@@ -89,48 +91,50 @@ namespace ProjetoLojaABC
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(517, 10);
+            this.btnLimpar.Location = new System.Drawing.Point(554, 15);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(133, 42);
-            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.Size = new System.Drawing.Size(100, 32);
+            this.btnLimpar.TabIndex = 18;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(393, 10);
+            this.btnPesquisar.Location = new System.Drawing.Point(445, 15);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(120, 42);
-            this.btnPesquisar.TabIndex = 16;
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 32);
+            this.btnPesquisar.TabIndex = 17;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(264, 10);
+            this.btnExcluir.Location = new System.Drawing.Point(333, 15);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(120, 42);
-            this.btnExcluir.TabIndex = 15;
+            this.btnExcluir.Size = new System.Drawing.Size(100, 32);
+            this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(136, 10);
+            this.btnCadastrar.Location = new System.Drawing.Point(109, 15);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(120, 42);
+            this.btnCadastrar.Size = new System.Drawing.Size(100, 32);
             this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(7, 10);
+            this.btnNovo.Location = new System.Drawing.Point(3, 15);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(120, 42);
+            this.btnNovo.Size = new System.Drawing.Size(100, 32);
             this.btnNovo.TabIndex = 13;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // gpbDadosPessoais
             // 
@@ -352,6 +356,15 @@ namespace ProjetoLojaABC
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(221, 15);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(100, 32);
+            this.btnAlterar.TabIndex = 15;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,5 +418,6 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbbEstado;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
