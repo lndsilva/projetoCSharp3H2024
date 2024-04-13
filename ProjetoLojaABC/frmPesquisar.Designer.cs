@@ -61,8 +61,7 @@ namespace ProjetoLojaABC
             this.rdbCodigo.Location = new System.Drawing.Point(123, 46);
             this.rdbCodigo.Name = "rdbCodigo";
             this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
-            this.rdbCodigo.TabIndex = 0;
-            this.rdbCodigo.TabStop = true;
+            this.rdbCodigo.TabIndex = 1;
             this.rdbCodigo.Text = "Código";
             this.rdbCodigo.UseVisualStyleBackColor = true;
             // 
@@ -72,8 +71,7 @@ namespace ProjetoLojaABC
             this.rdbNome.Location = new System.Drawing.Point(286, 46);
             this.rdbNome.Name = "rdbNome";
             this.rdbNome.Size = new System.Drawing.Size(67, 22);
-            this.rdbNome.TabIndex = 1;
-            this.rdbNome.TabStop = true;
+            this.rdbNome.TabIndex = 2;
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
             // 
@@ -82,16 +80,20 @@ namespace ProjetoLojaABC
             this.txtDescricao.Location = new System.Drawing.Point(123, 100);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(501, 24);
-            this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.TabIndex = 3;
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
             this.btnPesquisar.Location = new System.Drawing.Point(694, 23);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(186, 146);
-            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // lblDescricao
             // 
@@ -108,7 +110,7 @@ namespace ProjetoLojaABC
             this.lstPesquisar.Location = new System.Drawing.Point(24, 241);
             this.lstPesquisar.Name = "lstPesquisar";
             this.lstPesquisar.Size = new System.Drawing.Size(897, 251);
-            this.lstPesquisar.TabIndex = 1;
+            this.lstPesquisar.TabIndex = 5;
             // 
             // frmPesquisar
             // 

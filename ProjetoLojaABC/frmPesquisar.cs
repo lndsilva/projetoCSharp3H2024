@@ -15,6 +15,60 @@ namespace ProjetoLojaABC
         public frmPesquisar()
         {
             InitializeComponent();
+            desabilitaCampos();
+        }
+
+        public void desabilitaCampos()
+        {
+            rdbCodigo.Checked = false;
+            rdbNome.Checked = false;
+            txtDescricao.Focus();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (rdbCodigo.Checked == false || rdbNome.Checked == false)
+            {
+                MessageBox.Show("selecionar pesquisa");
+            }
+            else
+            {
+
+
+                if (rdbCodigo.Checked)
+                {
+                    if (txtDescricao.Text.Equals(""))
+                    {
+                        MessageBox.Show("Não posso pesquisar");
+                    }
+                    else
+                    {
+                        //busca por codigo
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("selecionar pesquisa");
+                }
+
+                if (rdbNome.Checked)
+                {
+                    if (txtDescricao.Text.Equals(""))
+                    {
+                        MessageBox.Show("Não posso pesquisar");
+                    }
+                    else
+                    {
+                        //busca por codigo
+
+                    }
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

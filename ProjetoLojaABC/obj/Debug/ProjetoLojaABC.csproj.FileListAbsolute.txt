@@ -23,3 +23,5 @@ C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\Proje
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.pdb
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmSobre.resources
 C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmFuncionarios.resources
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmPesquisar.resources
+C:\Users\Laboratorio-Info\Documents\Visual Studio 2019\projetoCSharp3H2024\ProjetoLojaABC\obj\Debug\ProjetoLojaABC.frmCalculadora.resources
