@@ -73,9 +73,37 @@ namespace ProjetoLojaABC
 
         private void btnTeste_Click(object sender, EventArgs e)
         {
-            lstPesquisar.Items.Clear();
-            lstPesquisar.Items.Add("1 - Maria Antonieta - 25 anos");
+            //lstPesquisar.Items.Clear();
+            lstPesquisar.Items.Add(txtDescricao.Text);
 
+            
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            lstPesquisar.Items.Clear();
+        }
+
+        private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = lstPesquisar.SelectedIndex;
+            string nome = lstPesquisar.SelectedItem.ToString();
+
+
+            MessageBox.Show("o número da linha "+ i + "- "+ nome);
+        }
+
+        private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
+        {          
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                lstPesquisar.Items.Add(txtDescricao.Text);               
+                txtDescricao.Clear();
+                txtDescricao.Focus();
+
+               
+            }
             
         }
     }

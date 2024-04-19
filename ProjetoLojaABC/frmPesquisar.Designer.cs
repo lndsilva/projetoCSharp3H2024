@@ -38,11 +38,13 @@ namespace ProjetoLojaABC
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.lstPesquisar = new System.Windows.Forms.ListBox();
             this.btnTeste = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbPesquisar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbPesquisar
             // 
+            this.gpbPesquisar.Controls.Add(this.btnLimpar);
             this.gpbPesquisar.Controls.Add(this.btnTeste);
             this.gpbPesquisar.Controls.Add(this.lblDescricao);
             this.gpbPesquisar.Controls.Add(this.btnPesquisar);
@@ -85,6 +87,7 @@ namespace ProjetoLojaABC
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(501, 24);
             this.txtDescricao.TabIndex = 3;
+            this.txtDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescricao_KeyDown);
             // 
             // rdbNome
             // 
@@ -113,16 +116,27 @@ namespace ProjetoLojaABC
             this.lstPesquisar.Name = "lstPesquisar";
             this.lstPesquisar.Size = new System.Drawing.Size(897, 251);
             this.lstPesquisar.TabIndex = 5;
+            this.lstPesquisar.SelectedIndexChanged += new System.EventHandler(this.lstPesquisar_SelectedIndexChanged);
             // 
             // btnTeste
             // 
-            this.btnTeste.Location = new System.Drawing.Point(462, 20);
+            this.btnTeste.Location = new System.Drawing.Point(370, 23);
             this.btnTeste.Name = "btnTeste";
             this.btnTeste.Size = new System.Drawing.Size(149, 61);
             this.btnTeste.TabIndex = 5;
             this.btnTeste.Text = "Teste";
             this.btnTeste.UseVisualStyleBackColor = true;
             this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(525, 23);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(149, 61);
+            this.btnLimpar.TabIndex = 6;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // frmPesquisar
             // 
@@ -153,5 +167,6 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.ListBox lstPesquisar;
         private System.Windows.Forms.Button btnTeste;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
