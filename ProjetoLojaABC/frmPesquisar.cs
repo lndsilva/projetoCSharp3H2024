@@ -70,5 +70,13 @@ namespace ProjetoLojaABC
                 }
             }
         }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            lstPesquisar.Items.Clear();
+            lstPesquisar.Items.Add("1 - Maria Antonieta - 25 anos");
+
+            
+        }
     }
 }

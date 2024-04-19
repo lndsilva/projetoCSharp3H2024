@@ -31,17 +31,19 @@ namespace ProjetoLojaABC
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisar));
             this.gpbPesquisar = new System.Windows.Forms.GroupBox();
-            this.rdbCodigo = new System.Windows.Forms.RadioButton();
-            this.rdbNome = new System.Windows.Forms.RadioButton();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
+            this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.lstPesquisar = new System.Windows.Forms.ListBox();
+            this.btnTeste = new System.Windows.Forms.Button();
             this.gpbPesquisar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbPesquisar
             // 
+            this.gpbPesquisar.Controls.Add(this.btnTeste);
             this.gpbPesquisar.Controls.Add(this.lblDescricao);
             this.gpbPesquisar.Controls.Add(this.btnPesquisar);
             this.gpbPesquisar.Controls.Add(this.txtDescricao);
@@ -55,15 +57,34 @@ namespace ProjetoLojaABC
             this.gpbPesquisar.TabStop = false;
             this.gpbPesquisar.Text = "Pesquisar por";
             // 
-            // rdbCodigo
+            // lblDescricao
             // 
-            this.rdbCodigo.AutoSize = true;
-            this.rdbCodigo.Location = new System.Drawing.Point(123, 46);
-            this.rdbCodigo.Name = "rdbCodigo";
-            this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
-            this.rdbCodigo.TabIndex = 1;
-            this.rdbCodigo.Text = "Código";
-            this.rdbCodigo.UseVisualStyleBackColor = true;
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(41, 103);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(76, 18);
+            this.lblDescricao.TabIndex = 4;
+            this.lblDescricao.Text = "Descrição";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(697, 23);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(187, 147);
+            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(123, 100);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(501, 24);
+            this.txtDescricao.TabIndex = 3;
             // 
             // rdbNome
             // 
@@ -75,34 +96,15 @@ namespace ProjetoLojaABC
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
             // 
-            // txtDescricao
+            // rdbCodigo
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(123, 100);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(501, 24);
-            this.txtDescricao.TabIndex = 3;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(694, 23);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(186, 146);
-            this.btnPesquisar.TabIndex = 4;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(41, 103);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(76, 18);
-            this.lblDescricao.TabIndex = 4;
-            this.lblDescricao.Text = "Descrição";
+            this.rdbCodigo.AutoSize = true;
+            this.rdbCodigo.Location = new System.Drawing.Point(123, 46);
+            this.rdbCodigo.Name = "rdbCodigo";
+            this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
+            this.rdbCodigo.TabIndex = 1;
+            this.rdbCodigo.Text = "Código";
+            this.rdbCodigo.UseVisualStyleBackColor = true;
             // 
             // lstPesquisar
             // 
@@ -111,6 +113,16 @@ namespace ProjetoLojaABC
             this.lstPesquisar.Name = "lstPesquisar";
             this.lstPesquisar.Size = new System.Drawing.Size(897, 251);
             this.lstPesquisar.TabIndex = 5;
+            // 
+            // btnTeste
+            // 
+            this.btnTeste.Location = new System.Drawing.Point(462, 20);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(149, 61);
+            this.btnTeste.TabIndex = 5;
+            this.btnTeste.Text = "Teste";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
             // 
             // frmPesquisar
             // 
@@ -140,5 +152,6 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.ListBox lstPesquisar;
+        private System.Windows.Forms.Button btnTeste;
     }
 }
