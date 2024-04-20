@@ -27,6 +27,12 @@ namespace ProjetoLojaABC
             InitializeComponent();
             desabilitarCampos();
         }
+        public frmFuncionarios(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            txtNome.Text = nome;
+        }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -121,6 +127,7 @@ namespace ProjetoLojaABC
         {
             frmPesquisar abrir = new frmPesquisar();
             abrir.Show();
+            this.Hide();
         }
     }
 }

@@ -16,8 +16,7 @@ namespace ProjetoLojaABC
         {
             InitializeComponent();
             desabilitaCampos();
-        }
-
+        }       
         public void desabilitaCampos()
         {
             rdbCodigo.Checked = false;
@@ -86,11 +85,13 @@ namespace ProjetoLojaABC
 
         private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = lstPesquisar.SelectedIndex;
+            //int i = lstPesquisar.SelectedIndex;
             string nome = lstPesquisar.SelectedItem.ToString();
+            //MessageBox.Show("o número da linha "+ i + "- "+ nome);
+            frmFuncionarios abrir = new frmFuncionarios(nome);
+            abrir.Show();
+            this.Hide();
 
-
-            MessageBox.Show("o número da linha "+ i + "- "+ nome);
         }
 
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
@@ -100,9 +101,7 @@ namespace ProjetoLojaABC
             {
                 lstPesquisar.Items.Add(txtDescricao.Text);               
                 txtDescricao.Clear();
-                txtDescricao.Focus();
-
-               
+                txtDescricao.Focus();                               
             }
             
         }

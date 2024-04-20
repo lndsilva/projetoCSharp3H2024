@@ -16,7 +16,7 @@ namespace ProjetoLojaABC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPesquisar());
+            Application.Run(new frmFuncionarios());
         }
     }
 }
