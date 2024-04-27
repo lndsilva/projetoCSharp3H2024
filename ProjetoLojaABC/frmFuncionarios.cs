@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+//importando o driver do banco de dados
+using MySql.Data.MySqlClient;
+
 
 namespace ProjetoLojaABC
 {
@@ -89,11 +92,57 @@ namespace ProjetoLojaABC
             btnNovo.Enabled = false;
             txtNome.Focus();
         }
+        public void limparCampos()
+        {
+            txtCodigo.Clear();
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtEndereco.Clear();
+            txtNome.Clear();
+            txtNumero.Clear();
+            mskCelular.Text = "";
+            mskCEP.Text = "";
+            mskCPF.Text = "";
+            cbbEstado.Text = "";
+        }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCampos();
+            txtCodigo.Enabled = false;
         }
+
+        //método cadastrar funcionarios
+        public void cadastrarFuncionarios()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "insert into tbFuncionarios" +
+                "(nome,email,cpf,telCel,endereco,numero,cep,bairro,cidade,estado)values(@nome, @email, @cpf, @telCel, @endereco, @numero, @cep, @bairro, @cidade, @estado);";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome",MySqlDbType.VarChar,100).Value = txtNome.Text;
+            comm.Parameters.Add("@email",MySqlDbType.VarChar,100).Value = txtEmail.Text;
+            comm.Parameters.Add("@cpf",MySqlDbType.VarChar,14).Value = mskCPF.Text;
+            comm.Parameters.Add("@telCel",MySqlDbType.VarChar,10).Value = mskCelular.Text;
+            comm.Parameters.Add("@endereco",MySqlDbType.VarChar,100).Value = txtEndereco.Text;
+            comm.Parameters.Add("@numero",MySqlDbType.VarChar,5).Value = txtNumero.Text;
+            comm.Parameters.Add("@cep",MySqlDbType.VarChar,9).Value = mskCEP.Text;
+            comm.Parameters.Add("@bairro",MySqlDbType.VarChar,100).Value = txtBairro.Text;
+            comm.Parameters.Add("@cidade",MySqlDbType.VarChar,100).Value = txtCidade.Text;
+            comm.Parameters.Add("@estado",MySqlDbType.VarChar,10).Value = cbbEstado.Text;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            MessageBox.Show("Cadastrado com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+
+
+        }
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -114,10 +163,7 @@ namespace ProjetoLojaABC
             else
             {
 
-                MessageBox.Show("Cadastrado com sucesso!!!",
-                    "Mensagem do sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1);
+                cadastrarFuncionarios();
                 desabilitarCampos();
                 btnNovo.Enabled = true;
             }
@@ -128,6 +174,24 @@ namespace ProjetoLojaABC
             frmPesquisar abrir = new frmPesquisar();
             abrir.Show();
             this.Hide();
+        }
+
+        public void buscaCEP(string cep)
+        {
+            
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+                WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCEP.Text,"","");
+                txtEndereco.Text = endereco.end;
+                txtBairro.Text = endereco.bairro;
+                txtCidade.Text = endereco.cidade;
+                cbbEstado.Text = endereco.uf;
+            }
         }
     }
 }
