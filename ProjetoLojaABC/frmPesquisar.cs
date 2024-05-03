@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLojaABC
 {
@@ -68,6 +69,17 @@ namespace ProjetoLojaABC
 
                 }
             }
+        }
+
+        public void buscaPrCodigo()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where codFunc = 1;";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
         }
 
         private void btnTeste_Click(object sender, EventArgs e)
