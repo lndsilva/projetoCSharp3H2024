@@ -71,10 +71,10 @@ namespace ProjetoLojaABC
             }
         }
 
-        public void buscaPrCodigo()
+        public void buscaPorCodigo(int codigo)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where codFunc = 1;";
+            comm.CommandText = "select * from tbFuncionarios where codFunc = @codFunc";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
 
