@@ -161,6 +161,25 @@ namespace ProjetoLojaABC
 
         }
 
+        public void carregaFuncionario()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+            DR.Read();
+
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+            txtNome.Text = DR.GetString(1);
+            txtEmail.Text = DR.GetString(2);
+            mskCPF.Text = DR.GetString(3);
+            mskCelular.Text = DR.GetString(4);
+        }
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {

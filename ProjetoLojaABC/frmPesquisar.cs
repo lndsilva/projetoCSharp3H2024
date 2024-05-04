@@ -27,49 +27,54 @@ namespace ProjetoLojaABC
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (rdbCodigo.Checked == false || rdbNome.Checked == false)
-            {
-                MessageBox.Show("selecionar pesquisa");
-            }
-            else
-            {
+            //buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+            buscaPorNome(txtDescricao.Text);
+
+            //buscaPorNome(txtDescricao.Text);
+            //if (rdbCodigo.Checked == false || rdbNome.Checked == false)
+            //{
+            //    MessageBox.Show("selecionar pesquisa");
+            //}
+            //else
+            //{
 
 
-                if (rdbCodigo.Checked)
-                {
-                    if (txtDescricao.Text.Equals(""))
-                    {
-                        MessageBox.Show("Não posso pesquisar");
-                    }
-                    else
-                    {
-                        //busca por codigo
-                        buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+            //    if (rdbCodigo.Checked)
+            //    {
+            //        if (txtDescricao.Text.Equals(""))
+            //        {
+            //            MessageBox.Show("Não posso pesquisar");
+            //        }
+            //        else
+            //        {
+            //            //busca por codigo
+            //            buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
 
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("selecionar pesquisa");
-                }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("selecionar pesquisa");
+            //    }
 
-                if (rdbNome.Checked)
-                {
-                    if (txtDescricao.Text.Equals(""))
-                    {
-                        MessageBox.Show("Não posso pesquisar");
-                    }
-                    else
-                    {
-                        //busca por codigo
+            //    if (rdbNome.Checked)
+            //    {
+            //        if (txtDescricao.Text.Equals(""))
+            //        {
+            //            MessageBox.Show("Não posso pesquisar");
+            //        }
+            //        else
+            //        {
+            //            //busca por nome
+            //            buscaPorNome(txtDescricao.Text);
 
-                    }
-                }
-                else
-                {
+            //        }
+            //    }
+            //    else
+            //    {
 
-                }
-            }
+            //    }
+            //}
         }
 
         public void buscaPorCodigo(int codigo)
@@ -86,28 +91,27 @@ namespace ProjetoLojaABC
             DR = comm.ExecuteReader();
             DR.Read();
 
-            lstPesquisar.Items.Add(DR.GetInt32(0));
+            lstPesquisar.Items.Add(DR.GetString(1));
 
             Conexao.fecharConexao();
         }
-        public void buscaPorNome(string nome)
+        public void buscaPorNome(string nomeFunc)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where nome like '%@nome%'";
+            comm.CommandText = "select codFunc,nome from tbFuncionarios where nome like '%"+nomeFunc+"%';";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@nome", MySqlDbType.Int32, 11).Value = nome;
+
+            comm.Parameters.Add("@nome", MySqlDbType.String, 100).Value = nomeFunc;
 
             MySqlDataReader DR;
             DR = comm.ExecuteReader();
 
             while (DR.Read())
             {
-
-                lstPesquisar.Items.Add(DR.GetString(0));
-
+                lstPesquisar.Items.Add(DR.GetString(1));
             }
 
             Conexao.fecharConexao();
