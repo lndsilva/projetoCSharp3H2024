@@ -17,7 +17,7 @@ namespace ProjetoLojaABC
         {
             InitializeComponent();
             desabilitaCampos();
-        }       
+        }
         public void desabilitaCampos()
         {
             rdbCodigo.Checked = false;
@@ -44,6 +44,7 @@ namespace ProjetoLojaABC
                     else
                     {
                         //busca por codigo
+                        buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
 
                     }
                 }
@@ -78,16 +79,43 @@ namespace ProjetoLojaABC
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
 
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codigo;
+
             MySqlDataReader DR;
             DR = comm.ExecuteReader();
+            DR.Read();
+
+            lstPesquisar.Items.Add(DR.GetInt32(0));
+
+            Conexao.fecharConexao();
         }
+        public void buscaPorNome(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where nome like '%@nome%'";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codigo;
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+
+            lstPesquisar.Items.Add(DR.GetInt32(0));
+
+            Conexao.fecharConexao();
+        }
+
 
         private void btnTeste_Click(object sender, EventArgs e)
         {
             //lstPesquisar.Items.Clear();
             lstPesquisar.Items.Add(txtDescricao.Text);
 
-            
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -107,15 +135,15 @@ namespace ProjetoLojaABC
         }
 
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
-        {          
+        {
 
             if (e.KeyCode == Keys.Enter)
             {
-                lstPesquisar.Items.Add(txtDescricao.Text);               
+                lstPesquisar.Items.Add(txtDescricao.Text);
                 txtDescricao.Clear();
-                txtDescricao.Focus();                               
+                txtDescricao.Focus();
             }
-            
+
         }
     }
 }
