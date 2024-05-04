@@ -98,13 +98,17 @@ namespace ProjetoLojaABC
             comm.Connection = Conexao.obterConexao();
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codigo;
+            comm.Parameters.Add("@nome", MySqlDbType.Int32, 11).Value = nome;
 
             MySqlDataReader DR;
             DR = comm.ExecuteReader();
-            DR.Read();
 
-            lstPesquisar.Items.Add(DR.GetInt32(0));
+            while (DR.Read())
+            {
+
+                lstPesquisar.Items.Add(DR.GetString(0));
+
+            }
 
             Conexao.fecharConexao();
         }
