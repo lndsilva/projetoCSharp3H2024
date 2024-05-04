@@ -35,6 +35,7 @@ namespace ProjetoLojaABC
             InitializeComponent();
             desabilitarCampos();
             txtNome.Text = nome;
+            carregaFuncionario(txtNome.Text);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -161,10 +162,10 @@ namespace ProjetoLojaABC
 
         }
 
-        public void carregaFuncionario()
+        public void carregaFuncionario(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "";
+            comm.CommandText = "select * from tbFuncionarios where nome = "+nome+" ";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
 
@@ -178,6 +179,14 @@ namespace ProjetoLojaABC
             txtEmail.Text = DR.GetString(2);
             mskCPF.Text = DR.GetString(3);
             mskCelular.Text = DR.GetString(4);
+            txtEndereco.Text = DR.GetString(5);
+            txtNumero.Text = DR.GetString(6);
+            mskCEP.Text = DR.GetString(7);
+            txtBairro.Text = DR.GetString(8);
+            txtCidade.Text = DR.GetString(9);
+            cbbEstado.Text = DR.GetString(10);
+
+            Conexao.fecharConexao();
         }
 
 
