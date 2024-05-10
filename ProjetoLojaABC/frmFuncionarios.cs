@@ -124,16 +124,16 @@ namespace ProjetoLojaABC
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@nome",MySqlDbType.VarChar,100).Value = txtNome.Text;
-            comm.Parameters.Add("@email",MySqlDbType.VarChar,100).Value = txtEmail.Text;
-            comm.Parameters.Add("@cpf",MySqlDbType.VarChar,14).Value = mskCPF.Text;
-            comm.Parameters.Add("@telCel",MySqlDbType.VarChar,10).Value = mskCelular.Text;
-            comm.Parameters.Add("@endereco",MySqlDbType.VarChar,100).Value = txtEndereco.Text;
-            comm.Parameters.Add("@numero",MySqlDbType.VarChar,5).Value = txtNumero.Text;
-            comm.Parameters.Add("@cep",MySqlDbType.VarChar,9).Value = mskCEP.Text;
-            comm.Parameters.Add("@bairro",MySqlDbType.VarChar,100).Value = txtBairro.Text;
-            comm.Parameters.Add("@cidade",MySqlDbType.VarChar,100).Value = txtCidade.Text;
-            comm.Parameters.Add("@estado",MySqlDbType.VarChar,10).Value = cbbEstado.Text;
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            comm.Parameters.Add("@email", MySqlDbType.VarChar, 100).Value = txtEmail.Text;
+            comm.Parameters.Add("@cpf", MySqlDbType.VarChar, 14).Value = mskCPF.Text;
+            comm.Parameters.Add("@telCel", MySqlDbType.VarChar, 10).Value = mskCelular.Text;
+            comm.Parameters.Add("@endereco", MySqlDbType.VarChar, 100).Value = txtEndereco.Text;
+            comm.Parameters.Add("@numero", MySqlDbType.VarChar, 5).Value = txtNumero.Text;
+            comm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = mskCEP.Text;
+            comm.Parameters.Add("@bairro", MySqlDbType.VarChar, 100).Value = txtBairro.Text;
+            comm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = txtCidade.Text;
+            comm.Parameters.Add("@estado", MySqlDbType.VarChar, 10).Value = cbbEstado.Text;
 
             comm.Connection = Conexao.obterConexao();
             int res = comm.ExecuteNonQuery();
@@ -165,8 +165,13 @@ namespace ProjetoLojaABC
         public void carregaFuncionario(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where nome = "+nome+" ";
+            comm.CommandText = "select * from tbFuncionarios where nome = @nome";
             comm.CommandType = CommandType.Text;
+
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+
             comm.Connection = Conexao.obterConexao();
 
             MySqlDataReader DR;
@@ -187,6 +192,18 @@ namespace ProjetoLojaABC
             cbbEstado.Text = DR.GetString(10);
 
             Conexao.fecharConexao();
+
+            funcaoCarregaFuncionario();
+
+        }
+        public void funcaoCarregaFuncionario()
+        {
+            habilitarCampos();
+            txtCodigo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnNovo.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
 
@@ -224,7 +241,7 @@ namespace ProjetoLojaABC
 
         public void buscaCEP(string cep)
         {
-            
+
         }
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
@@ -232,12 +249,51 @@ namespace ProjetoLojaABC
             if (e.KeyCode == Keys.Enter)
             {
                 WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
-                WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCEP.Text,"","");
+                WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCEP.Text, "", "");
                 txtEndereco.Text = endereco.end;
                 txtBairro.Text = endereco.bairro;
                 txtCidade.Text = endereco.cidade;
                 cbbEstado.Text = endereco.uf;
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            txtNome.Focus();
+        }
+
+        public void alterarFuncionarios(int codFunc)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "update tbFuncionarios set nome=@nome,email=@email,cpf=@cpf,telCel=@telCel,endereco=@endereco,numero=@numero,cep=@cep,bairro=@bairro,cidade=@cidade,estado=@estado where codFunc=@codFunc";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            comm.Parameters.Add("@email", MySqlDbType.VarChar, 100).Value = txtEmail.Text;
+            comm.Parameters.Add("@cpf", MySqlDbType.VarChar, 14).Value = mskCPF.Text;
+            comm.Parameters.Add("@telCel", MySqlDbType.VarChar, 10).Value = mskCelular.Text;
+            comm.Parameters.Add("@endereco", MySqlDbType.VarChar, 100).Value = txtEndereco.Text;
+            comm.Parameters.Add("@numero", MySqlDbType.VarChar, 5).Value = txtNumero.Text;
+            comm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = mskCEP.Text;
+            comm.Parameters.Add("@bairro", MySqlDbType.VarChar, 100).Value = txtBairro.Text;
+            comm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = txtCidade.Text;
+            comm.Parameters.Add("@estado", MySqlDbType.VarChar, 10).Value = cbbEstado.Text;
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codFunc;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            MessageBox.Show("Alterado com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            alterarFuncionarios(Convert.ToInt32(txtCodigo.Text));
         }
     }
 }
