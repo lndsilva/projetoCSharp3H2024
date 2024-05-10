@@ -27,54 +27,14 @@ namespace ProjetoLojaABC
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
-            buscaPorNome(txtDescricao.Text);
-
-            //buscaPorNome(txtDescricao.Text);
-            //if (rdbCodigo.Checked == false || rdbNome.Checked == false)
-            //{
-            //    MessageBox.Show("selecionar pesquisa");
-            //}
-            //else
-            //{
-
-
-            //    if (rdbCodigo.Checked)
-            //    {
-            //        if (txtDescricao.Text.Equals(""))
-            //        {
-            //            MessageBox.Show("Não posso pesquisar");
-            //        }
-            //        else
-            //        {
-            //            //busca por codigo
-            //            buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
-
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("selecionar pesquisa");
-            //    }
-
-            //    if (rdbNome.Checked)
-            //    {
-            //        if (txtDescricao.Text.Equals(""))
-            //        {
-            //            MessageBox.Show("Não posso pesquisar");
-            //        }
-            //        else
-            //        {
-            //            //busca por nome
-            //            buscaPorNome(txtDescricao.Text);
-
-            //        }
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
+            if (rdbCodigo.Enabled)
+            {
+                buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+            }
+            else if (rdbNome.Enabled)
+            {
+                buscaPorNome(txtDescricao.Text);
+            }
         }
 
         public void buscaPorCodigo(int codigo)
@@ -98,7 +58,7 @@ namespace ProjetoLojaABC
         public void buscaPorNome(string nomeFunc)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select codFunc,nome from tbFuncionarios where nome like '%"+nomeFunc+"%';";
+            comm.CommandText = "select codFunc,nome from tbFuncionarios where nome like '%" + nomeFunc + "%';";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
 
