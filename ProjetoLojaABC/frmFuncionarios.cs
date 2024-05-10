@@ -295,5 +295,25 @@ namespace ProjetoLojaABC
         {
             alterarFuncionarios(Convert.ToInt32(txtCodigo.Text));
         }
+        public void excluirFuncionarios(int codFunc)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "delete from tbfuncionarios where codFunc=@codFunc";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codFunc;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            MessageBox.Show("Excluído com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+        }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            excluirFuncionarios(Convert.ToInt32(txtCodigo.Text));
+        }
     }
 }
