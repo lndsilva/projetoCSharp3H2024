@@ -225,5 +225,13 @@ namespace ProjetoLojaABC
         {
             excluirUsuario(Convert.ToInt32(txtCodigo.Text));
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisarUsuarios abrir = new frmPesquisarUsuarios();
+            abrir.Show();
+            this.Hide();
+
+        }
     }
 }
