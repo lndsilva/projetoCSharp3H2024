@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="frmCadFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadFunc.Designer.cs">
+      <DependentUpon>frmCadFunc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCalculadora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadFunc.resx">
+      <DependentUpon>frmCadFunc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCalculadora.resx">
       <DependentUpon>frmCalculadora.cs</DependentUpon>
     </EmbeddedResource>

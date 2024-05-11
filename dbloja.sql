@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Maio-2024 às 03:12
+-- Tempo de geração: 11-Maio-2024 às 02:14
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 7.4.33
 
@@ -46,7 +46,19 @@ CREATE TABLE `tbfuncionarios` (
 --
 
 INSERT INTO `tbfuncionarios` (`codFunc`, `nome`, `email`, `cpf`, `telCel`, `endereco`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES
-(1, 'João da Silva', 'joao.silva@hotmail.com', '253.352.685-77', '99582-8547', 'Rua das Pedras', '55', '04752-888', 'Santo Amaro', 'São Paulo', 'SP');
+(1, 'João da Silva Nunes', 'joao.snunes@hotmail.com', '253.352.685-77', '99582-8547', 'Rua das Pedras', '55', '04752-888', 'Santo Amaro', 'São Paulo', 'SP');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbusuarios`
+--
+
+CREATE TABLE `tbusuarios` (
+  `codUsu` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `senha` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
@@ -60,6 +72,12 @@ ALTER TABLE `tbfuncionarios`
   ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
+-- Índices para tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  ADD PRIMARY KEY (`codUsu`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -67,7 +85,13 @@ ALTER TABLE `tbfuncionarios`
 -- AUTO_INCREMENT de tabela `tbfuncionarios`
 --
 ALTER TABLE `tbfuncionarios`
-  MODIFY `codFunc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codFunc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  MODIFY `codUsu` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
