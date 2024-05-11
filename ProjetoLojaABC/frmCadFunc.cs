@@ -29,6 +29,14 @@ namespace ProjetoLojaABC
             desabilitarCampos();
         }
 
+        public frmCadFunc(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            txtNome.Text = nome;
+            carregaUsuario(txtNome.Text);
+        }
+
         private void frmCadFunc_Load(object sender, EventArgs e)
         {
             IntPtr hMenu = GetSystemMenu(this.Handle, false);
@@ -92,22 +100,130 @@ namespace ProjetoLojaABC
             comm.Connection = Conexao.obterConexao();
             int res = comm.ExecuteNonQuery();
 
-            MessageBox.Show("Usuário cadastrado com sucesso");
+            MessageBox.Show("Cadastrado com sucesso");
             limparCampos();
             Conexao.fecharConexao();
+        }
+
+        public void buscarCodigoUsu()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select codUsu+1 from tbUsuarios order by codUsu desc;";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+
+            Conexao.fecharConexao();
+
+        }
+
+        public void carregaUsuario(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbUsuarios where nome = @nome";
+            comm.CommandType = CommandType.Text;
 
 
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+            DR.Read();
+
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+            txtNome.Text = DR.GetString(1);
+            
+
+            Conexao.fecharConexao();
+            funcaoCarregaUsuario();
+
+        }
+
+        public void alterarUsuario(int codUsu)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "update tbUsuarios set nome=@nome,senha=@senha where codUsu=@codUsu";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 30).Value = txtNome.Text;
+            comm.Parameters.Add("@senha", MySqlDbType.VarChar, 10).Value = txtSenha.Text;
+
+            comm.Parameters.Add("@codUsu", MySqlDbType.Int32, 11).Value = codUsu;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            MessageBox.Show("Alterado com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+        }
+
+        public void excluirUsuario(int codUsu)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "delete from tbusuarios where codUsu=@codUsu";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codUsu", MySqlDbType.Int32, 11).Value = codUsu;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            MessageBox.Show("Excluído com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+        }
+
+        public void funcaoCarregaUsuario()
+        {
+            habilitarCampos();
+            txtCodigo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnNovo.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             cadastrarUsuarios();
+            desabilitarCampos();
+            btnNovo.Enabled = true;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCampos();
             txtCodigo.Enabled = false;
+            buscarCodigoUsu();
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            alterarUsuario(Convert.ToInt32(txtCodigo.Text));
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            excluirUsuario(Convert.ToInt32(txtCodigo.Text));
         }
     }
 }

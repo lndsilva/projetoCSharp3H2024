@@ -164,6 +164,7 @@ namespace ProjetoLojaABC
             this.btnAlterar.TabIndex = 15;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnLimpar
             // 
@@ -173,6 +174,7 @@ namespace ProjetoLojaABC
             this.btnLimpar.TabIndex = 18;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnPesquisar
             // 
@@ -191,6 +193,7 @@ namespace ProjetoLojaABC
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCadastrar
             // 
