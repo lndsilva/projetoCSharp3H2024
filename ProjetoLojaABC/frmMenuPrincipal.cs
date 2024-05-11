@@ -47,5 +47,12 @@ namespace ProjetoLojaABC
             int MenuCount = GetMenuItemCount(hMenu) - 1;
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmCadFunc abrir = new frmCadFunc();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
