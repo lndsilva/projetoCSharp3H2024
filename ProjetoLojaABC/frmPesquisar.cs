@@ -22,18 +22,26 @@ namespace ProjetoLojaABC
         {
             rdbCodigo.Checked = false;
             rdbNome.Checked = false;
-            txtDescricao.Focus();
+            txtDescricao.Enabled = false;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (rdbCodigo.Enabled)
+            if (rdbCodigo.Checked)
             {
+                lstPesquisar.Items.Clear();
                 buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+                txtDescricao.Focus();
+                txtDescricao.Clear();
+
             }
-            else if (rdbNome.Enabled)
+            if (rdbNome.Checked)
             {
+                lstPesquisar.Items.Clear();
                 buscaPorNome(txtDescricao.Text);
+                txtDescricao.Focus();
+                txtDescricao.Clear();
+
             }
         }
 
@@ -106,11 +114,23 @@ namespace ProjetoLojaABC
 
             if (e.KeyCode == Keys.Enter)
             {
-                lstPesquisar.Items.Add(txtDescricao.Text);
-                txtDescricao.Clear();
-                txtDescricao.Focus();
+                //lstPesquisar.Items.Add(txtDescricao.Text);
+                //txtDescricao.Clear();
+                //txtDescricao.Focus();
             }
 
+        }
+
+        private void rdbCodigo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtDescricao.Enabled = true;
+            txtDescricao.Focus();
+        }
+
+        private void rdbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            txtDescricao.Enabled = true;
+            txtDescricao.Focus();
         }
     }
 }

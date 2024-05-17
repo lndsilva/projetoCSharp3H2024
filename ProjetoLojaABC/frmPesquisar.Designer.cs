@@ -94,6 +94,7 @@ namespace ProjetoLojaABC
             this.rdbNome.TabIndex = 2;
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
+            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
             // 
             // rdbCodigo
             // 
@@ -104,6 +105,7 @@ namespace ProjetoLojaABC
             this.rdbCodigo.TabIndex = 1;
             this.rdbCodigo.Text = "Código";
             this.rdbCodigo.UseVisualStyleBackColor = true;
+            this.rdbCodigo.CheckedChanged += new System.EventHandler(this.rdbCodigo_CheckedChanged);
             // 
             // lstPesquisar
             // 
