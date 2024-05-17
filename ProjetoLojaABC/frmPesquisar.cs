@@ -99,7 +99,6 @@ namespace ProjetoLojaABC
             frmFuncionarios abrir = new frmFuncionarios(nome);
             abrir.Show();
             this.Hide();
-
         }
 
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)

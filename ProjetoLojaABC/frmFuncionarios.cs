@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 //importando o driver do banco de dados
 using MySql.Data.MySqlClient;
+using RestSharp;
+using RestSharp.Deserializers;
 
 
 namespace ProjetoLojaABC
@@ -248,13 +250,23 @@ namespace ProjetoLojaABC
         {
             if (e.KeyCode == Keys.Enter)
             {
-                WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
-                WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCEP.Text, "", "");
-                txtEndereco.Text = endereco.end;
-                txtBairro.Text = endereco.bairro;
-                txtCidade.Text = endereco.cidade;
-                cbbEstado.Text = endereco.uf;
+                    RestClient restClient = new RestClient(string.Format("https://viacep.com.br/ws/{0}/json/", mskCEP.Text));
+                    RestRequest restRequest = new RestRequest(Method.GET);
+
+                    IRestResponse restResponse = restClient.Execute(restRequest);
+
+                DadosRetorno dadosRetorno = new JsonDeserializer().Deserialize<DadosRetorno>(restResponse);
+
+                mskCEP.Text = dadosRetorno.cep;
+                txtEndereco.Text = dadosRetorno.logradouro;
+                txtBairro.Text = dadosRetorno.bairro;
+                txtCidade.Text = dadosRetorno.localidade;
+                cbbEstado.Text = dadosRetorno.uf;
+
+                txtNumero.Focus();
+
             }
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
