@@ -219,7 +219,7 @@ namespace ProjetoLojaABC
                 || mskCPF.Text.Equals("   .   .   -") ||
                 mskCEP.Text.Equals("     -") || cbbEstado.Text.Equals(""))
             {
-                MessageBox.Show("Favor inserir valores válidos!!!",
+                MessageBox.Show("Favor preencher todos os campos!!!",
                 "Mensagem do sistema", MessageBoxButtons.OK,
                 MessageBoxIcon.Error,
                 MessageBoxDefaultButton.Button1);
@@ -326,6 +326,16 @@ namespace ProjetoLojaABC
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             excluirFuncionarios(Convert.ToInt32(txtCodigo.Text));
+        }
+
+        public void validaCPF()
+        {
+
+        }
+
+        private void mskCPF_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

@@ -66,20 +66,18 @@ namespace ProjetoLojaABC
         public void buscaPorNome(string nomeFunc)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select codFunc,nome from tbFuncionarios where nome like '%" + nomeFunc + "%';";
+            comm.CommandText = "select nome from tbFuncionarios where nome like '%"+nomeFunc+"%'";
             comm.CommandType = CommandType.Text;
+           
             comm.Connection = Conexao.obterConexao();
-
-            comm.Parameters.Clear();
-
-            comm.Parameters.Add("@nome", MySqlDbType.String, 100).Value = nomeFunc;
 
             MySqlDataReader DR;
             DR = comm.ExecuteReader();
 
             while (DR.Read())
             {
-                lstPesquisar.Items.Add(DR.GetString(1));
+               lstPesquisar.Items.Add(DR.GetString(0));
+                
             }
 
             Conexao.fecharConexao();

@@ -309,6 +309,7 @@ namespace ProjetoLojaABC
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(112, 24);
             this.mskCPF.TabIndex = 4;
+            this.mskCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCPF_KeyDown);
             // 
             // label4
             // 
